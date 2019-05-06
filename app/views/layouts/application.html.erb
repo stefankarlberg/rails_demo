@@ -7,9 +7,23 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
   </head>
 
   <body>
+      <div>
+        <ul class="list-reset flex">
+          <li class="-mb-px mr-1 bg-white inline-block py-2 px-4 text-blue hover:text-blue-darker font-semibold">
+            <%= link_to 'Home', root_path, :method => "get", id: "articles_index" %>
+          </li>
+          <li class="mr-1 bg-white inline-block py-2 px-4 text-blue hover:text-blue-darker font-semibold">
+            <%= link_to 'New Article', new_article_path, :method => "get", id: "new_article" %>
+          </li>
+          <li class="mr-1 bg-white inline-block py-2 px-4 text-blue hover:text-blue-darker font-semibold">
+            <%= link_to 'Show articles', articles_path, :method => "get", id: "show_article" %>
+          </li>
+        </ul>
+      </div>
     <%= yield %>
   </body>
 </html>
