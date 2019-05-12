@@ -10,15 +10,27 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+
+    if @article.save
+      flash[:success] = 'Successfully created article.'
+      redirect_to @article
+    else
+      render 'new'
+      flash[:fail] = 'Please fill in all fields.'
+    end
   end
 
   def create
     @article = Article.new(article_params)
-   
-    @article.save
-    redirect_to @article
+ 
+    if @article.save
+      flash[:success] = 'Successfully created article.'
+      redirect_to @article
+    else
+      render 'new'
+      flash[:fail] = 'Please fill in all fields.'
+    end
   end
-  
 
   private
   def article_params

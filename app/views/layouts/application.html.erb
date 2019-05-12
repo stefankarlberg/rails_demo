@@ -11,6 +11,9 @@
   </head>
 
   <body>
+ <% flash.each do |key, value| %>
+  <div class="text-center"><%= value %></div>
+  <% end %>
       <div>
         <ul class="list-reset flex">
           <li class="-mb-px mr-1 bg-white inline-block py-2 px-4 text-blue hover:text-blue-darker font-semibold">
