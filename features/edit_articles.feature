@@ -30,5 +30,5 @@ Feature: Edit articles
     Then I should see "Edit article"
     When I fill in "article[title]" with ""
     And I click "Update Article" button
-    Then I should see "Please fill in all fields."
+    Then I should see "Title can't be blank"
     
