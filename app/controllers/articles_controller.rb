@@ -41,6 +41,7 @@ class ArticlesController < ApplicationController
    
     if @article.update(article_params)
       redirect_to @article
+      flash[:success] = 'Successfully created article.'
     else
       render 'edit'
       flash[:fail] = 'Please fill in all fields.'
